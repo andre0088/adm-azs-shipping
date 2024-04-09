@@ -1,12 +1,9 @@
 package com.adm.azs.shipping.application.exception;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-
-
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-
-import org.junit.Before;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,7 +12,7 @@ public class GlobalExceptionHandlerTest {
 
     private GlobalExceptionHandler handler;
 
-    @Before
+    @BeforeEach
     public void setUp() {
         handler = new GlobalExceptionHandler();
     }
@@ -47,3 +44,4 @@ public class GlobalExceptionHandlerTest {
         assertEquals("Bad request: Bad request", response.getBody());
     }
 }
+

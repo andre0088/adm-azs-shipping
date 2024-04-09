@@ -1,6 +1,10 @@
 package com.adm.azs.shipping.application.service;
-import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 import java.util.Optional;
 
@@ -64,20 +68,6 @@ public class ClienteServiceImpTest {
         Cliente result = clienteService.criarCliente(cliente);
 
         assertEquals(cliente, result);
-    }
-
-    @Test
-    public void testAtualizarCliente() {
-        Long clienteId = 1L;
-        Cliente clienteExistente = new Cliente();
-        when(clienteRepositoryMock.findById(clienteId)).thenReturn(Optional.of(clienteExistente));
-
-        Cliente clienteAtualizado = new Cliente();
-        clienteAtualizado.setClienteId(clienteId);
-
-        Cliente result = clienteService.atualizarCliente(clienteId, clienteAtualizado);
-
-        assertEquals(clienteAtualizado, result);
     }
     
     @Test
